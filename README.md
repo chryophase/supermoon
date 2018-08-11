@@ -1,4 +1,6 @@
-Supermoon development tree.
+SUPERMOON is a PoS-based cryptocurrency, which has a unique approach to PoS, which links APR Rewards to phases of
+moon in real time. 
 
-Supermoon is a PoS-based cryptocurrency, which has a unique approach to PoS, which will be revealed when development is ready.
+It also gives bonuses to real time Stellar events such as Eclipses, Astroid showers,  Annual events and of course, the rare Supermoon...
 
+If any of these events occur at the same time, then the APR stacks....
