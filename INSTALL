@@ -1,0 +1,9 @@
+Building Supermoon
+
+See doc/readme-qt.rst for instructions on building Supermoon QT,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of Supermoon.
+
+See doc/build-*.txt for instructions on building supermoond,
+the intended-for-services, no-graphical-interface, reference
+implementation of Supermoon.
