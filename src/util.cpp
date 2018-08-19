@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
-// Copyright (c) 2018 The Supermoon Devs
+// Copyright (c) 2018 The Supermoon Devs 1.01
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -955,7 +955,7 @@ boost::filesystem::path GetDefaultDataDir()
     // Unix: ~/.supermoon
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "supermoonDEV";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "supermoon";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -967,10 +967,10 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     fs::create_directory(pathRet);
-    return pathRet / "supermoonDEV";
+    return pathRet / "supermoon";
 #else
     // Unix
-    return pathRet / ".supermoonDEV";
+    return pathRet / ".supermoon";
 #endif
 #endif
 }
