@@ -1,20 +1,19 @@
+#ifndef Q_MOC_RUN
 #include "rpcconsole.h"
 #include "ui_rpcconsole.h"
-
 #include "clientmodel.h"
 #include "guiutil.h"
-
 #include "rpcserver.h"
 #include "rpcclient.h"
-
 #include <QTime>
 #include <QThread>
 #include <QKeyEvent>
 #include <QUrl>
 #include <QScrollBar>
-
 #include <openssl/crypto.h>
+#endif
 
+//ifndef Q_MOC_RUN  (Boost_Join:50 Fix)
 // TODO: add a scrollback limit, as there is currently none
 // TODO: make it possible to filter out categories (esp debug messages when implemented)
 // TODO: receive errors and debug messages through ClientModel
