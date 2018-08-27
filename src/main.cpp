@@ -1316,7 +1316,7 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
 	// Coin supply > 499,999,999 = PoS coin reward=10 Sats, * 525960 stakes = 0.052596 SUPM a Year
  	if(pindexBest->nMoneySupply >= 49999999900000000)         
   			{
-         		nSubsidy = 0.0000001; 	
+         		nSubsidy = 1; 	
        		  	LogPrintf("**************\n");
        		  	LogPrintf("*** Max Moneysupply Nearly Reached PoS Reward set to 1 Satoshi *****\n");
        		  	LogPrintf("**** nMononeysupply Max=nMoneySupply=%d nSubsidy=%d nHeight=%d **\n", pindexBest->nMoneySupply, nSubsidy, pindexBest->nHeight );
