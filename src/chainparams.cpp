@@ -3,7 +3,7 @@
 // Copyright (c) 2018 Supermoon developers 
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-// Build PROD v0.7 Wallet 1.1.0.0   
+// Build PROD v0.751 Wallet 1.1.0.0   
 #include "assert.h"
 
 #include "chainparams.h"
@@ -90,13 +90,13 @@ public:
         genesis.nVersion = 1;
         genesis.nTime    = 1535953653;
         genesis.nBits    = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce   = 0;
+        genesis.nNonce   = 1925456;
 
-	MineGenesis(genesis);    ////Mine merkleroot + Genesis block hash+nonce
+	//MineGenesis(genesis);    ////Mine merkleroot + Genesis block hash+nonce
         
 	hashGenesisBlock = genesis.GetHash();
-          assert(hashGenesisBlock == uint256("0x"));
-          assert(genesis.hashMerkleRoot == uint256("0x"));
+          assert(hashGenesisBlock == uint256("0x0000057c2413b80a910c03e9f7e40339ba6577fbbf46e1ac4e90766d147aa0cf"));
+          assert(genesis.hashMerkleRoot == uint256("0x030c5a65bdea9543b5d28cd49af8392d44aca44a2e8a5797ee61c235d5cb0cd8"));
       
 	
        	vSeeds.push_back(CDNSSeedData("45.76.124.145", "45.76.124.145")); 	// SUPM-Node1   (PROD)
@@ -148,13 +148,13 @@ public:
         nRPCPort = 19999;
         strDataDir = "testnet";
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce = 0;
+        genesis.nNonce = 4119810;
         genesis.nTime    = 1535953950;
   	//Mine test + Genesis block hash+nonce (merkle done already above)         
 	//MineGenesis(genesis);   
 	
 	hashGenesisBlock = genesis.GetHash();
-                assert(hashGenesisBlock == uint256("0x"));
+                assert(hashGenesisBlock == uint256("0x000009606fc76f13afb43a7ae23f778825f94aa3a410e1b2cd7b948ea5a8d718"));
 
         vFixedSeeds.clear(); 
         vSeeds.clear();
@@ -190,15 +190,15 @@ public:
         pchMessageStart[2] = 0xb7;
         pchMessageStart[3] = 0x7d;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 1);
-        genesis.nTime = 0;
+        genesis.nTime = 1535987985;
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce = 267812;
+        genesis.nNonce = 23552;
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 21999;
         strDataDir = "regtest";
 
         //MineGenesis(genesis);  //mine last nTime setting Genesis block
-        assert(hashGenesisBlock == uint256("0x"));
+        assert(hashGenesisBlock == uint256("0x00000590367dfecb2a34242b4173e91bb07e8c012f83ac1e2bb1fd3f0196ead4"));
 
         vSeeds.clear();  // Regtest mode doesn't have any DNS seeds.
     }
