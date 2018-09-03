@@ -6,4 +6,4 @@ Astronomy Calendar of Celestial Events are tracked in full for Calendar Year 201
 
 If any of these events occur at the same time, then the APR% rewards for each event stacks.
 
-Supermoon Developers have also coded fixes to stop other classic PoS exploits such as wallet locking, which uses wallet locking to gain coinweight, and then unlock wallets to gain past coinweight rewards at the highest rate.
+For full details see: http:\\www.supermooncoin.com
