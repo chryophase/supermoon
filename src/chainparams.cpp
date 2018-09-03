@@ -3,7 +3,7 @@
 // Copyright (c) 2018 Supermoon developers 
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-// Build PROD v0.7 Wallet 1.0.0.0
+// Build PROD v0.7 Wallet 1.1.0.0   
 #include "assert.h"
 
 #include "chainparams.h"
@@ -76,27 +76,27 @@ public:
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 20);
 
         // Build the genesis. 
-        const char* pszTimestamp = "Supermoon V7 Production 1 Aug 2018";
+        const char* pszTimestamp = "Supermoon-V1-1-Production1Sep2018";
         std::vector<CTxIn> vin;
         vin.resize(1);
         vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         std::vector<CTxOut> vout;
         vout.resize(1);
         vout[0].SetEmpty();
-        CTransaction txNew(1, 1533941070, vin, vout, 0);
+        CTransaction txNew(1, 1535953653, vin, vout, 0);
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1533941070;
+        genesis.nTime    = 1535953653;
         genesis.nBits    = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce   = 324401;
+        genesis.nNonce   = 0;
 
-	//MineGenesis(genesis);    ////Mine merkleroot + Genesis block hash+nonce
+	MineGenesis(genesis);    ////Mine merkleroot + Genesis block hash+nonce
         
 	hashGenesisBlock = genesis.GetHash();
-          assert(hashGenesisBlock == uint256("0x00000f9395d9f6707cfa55710eaabe5986652249bea78ce28c99ddeaa66f043e"));
-          assert(genesis.hashMerkleRoot == uint256("0x90068042122bbed74185bb2587fbbfd13be1d2dfbbe6004e8f88cdf0176d5844"));
+          assert(hashGenesisBlock == uint256("0x"));
+          assert(genesis.hashMerkleRoot == uint256("0x"));
       
 	
        	vSeeds.push_back(CDNSSeedData("45.76.124.145", "45.76.124.145")); 	// SUPM-Node1   (PROD)
@@ -104,7 +104,7 @@ public:
 	vSeeds.push_back(CDNSSeedData("199.247.16.65", "199.247.16.65")); 	// SUPM-Node3	(PROD)	
 	//vSeeds.push_back(CDNSSeedData("45.76.118.86", "45.76.118.86")); 	// SUPM-DEV1   (DEV)    
 		
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 63);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 63);	//Addys Start with S
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 83);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1, (63+128));
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xC2)(0x1E).convert_to_container<std::vector<unsigned char> >();
@@ -112,8 +112,8 @@ public:
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
-        nLastPOWBlock = 1000;		//validation point for last possible Mining
-        nPOSStartBlock = 1001;		//validation point for staking to start
+        nLastPOWBlock = 3500;		//validation point for last possible Mining
+        nPOSStartBlock = 3501;		//validation point for staking to start
     }
 
     virtual const CBlock& GenesisBlock() const { return genesis; }
@@ -148,13 +148,13 @@ public:
         nRPCPort = 19999;
         strDataDir = "testnet";
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce = 3430592;
-        genesis.nTime    = 1533044345;
+        genesis.nNonce = 0;
+        genesis.nTime    = 1535953950;
   	//Mine test + Genesis block hash+nonce (merkle done already above)         
-	
 	//MineGenesis(genesis);   
+	
 	hashGenesisBlock = genesis.GetHash();
-                assert(hashGenesisBlock == uint256("0x00000495d7ef19e8b4c8a106abb30d6de2fdaae4bb7273cf0123223274788738"));
+                assert(hashGenesisBlock == uint256("0x"));
 
         vFixedSeeds.clear(); 
         vSeeds.clear();
@@ -164,7 +164,7 @@ public:
 	vSeeds.push_back(CDNSSeedData("199.247.16.65", "199.247.16.65")); 	// SUPM-Node3	(PROD)	 
 	//vSeeds.push_back(CDNSSeedData("45.76.118.86", "45.76.118.86")); 	// SUPM-DEV1   (DEV) 
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 65); // Supermoon testnet start T
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 65); // Supermoon testnet Addys Start with T
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 196);
         base58Prefixes[SECRET_KEY]     = std::vector<unsigned char>(1, 65 + 128);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
@@ -190,7 +190,7 @@ public:
         pchMessageStart[2] = 0xb7;
         pchMessageStart[3] = 0x7d;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 1);
-        genesis.nTime = 1533044399;
+        genesis.nTime = 0;
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
         genesis.nNonce = 267812;
         hashGenesisBlock = genesis.GetHash();
@@ -198,7 +198,7 @@ public:
         strDataDir = "regtest";
 
         //MineGenesis(genesis);  //mine last nTime setting Genesis block
-        assert(hashGenesisBlock == uint256("0x000006517c907f531c4dccce51d0676ed3931e2529e420ec5e4ed470e8dd737e"));
+        assert(hashGenesisBlock == uint256("0x"));
 
         vSeeds.clear();  // Regtest mode doesn't have any DNS seeds.
     }

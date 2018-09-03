@@ -2,12 +2,12 @@
 #define CLIENTVERSION_H
 
 //
-// client versioning 1.0.0.0 - SUPERMOON DEV 0.7 11-Aug-18
+// client versioning 1.1.0.0 - SUPERMOON PROD 
 //
 
 // These need to be macros, as version.cpp's and bitcoin-qt.rc's voodoo requires it
 #define CLIENT_VERSION_MAJOR       1
-#define CLIENT_VERSION_MINOR       0
+#define CLIENT_VERSION_MINOR       1
 #define CLIENT_VERSION_REVISION    0
 #define CLIENT_VERSION_BUILD       0
 
