@@ -1181,27 +1181,6 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
 	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5;         //Sep 25 Full
         	    LogPrintf("Week of Sep 25-Oct 2 Full nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
 		}
-/* //////////Sep 2018
-        else if(pindexBest->GetBlockTime()  <= 1536516060)
-            {
-	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;         //Sep 3 Last 1/2
-            LogPrintf("Week of Sep 3-9 1/2 nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
-		}
-		else if(pindexBest->GetBlockTime()  <= 1537139700)
-	        {
-	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 1;         //Sep 9 New
-            LogPrintf("Week of Sep 9-16 New nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
-		}
-		else if(pindexBest->GetBlockTime()  <= 1537843920)
-	        {
-	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;         //Sep 16 First 1/2
-            LogPrintf("Week of Sep 16-25 1/2 nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
-		}
-        else if(pindexBest->GetBlockTime()  <= 1538473500)
-	        {
-	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5;         //Sep 25 Full
-            LogPrintf("Week of Sep 25-Oct 2 Full nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
-		}
 
     ///////////////////// Checked OK - DC
     /// Oct 2018
