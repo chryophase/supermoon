@@ -1060,7 +1060,7 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
     if(SUPMCoinWeightMax >= 3628800) 										
        {
        SUPMCoinWeightMax = 3628800;   		//Set SUPMCoinWeightMax to 48 hours Max stops Wallet-Lock-Exploit CoinReward, but does not ajust PoS right to stake weight elevation
-       LogPrintf("** nCoinAge %d ajusted to 48 hours SUPMCoinMax =%d \n", nCoinAge, SUPMCoinWeightMax )
+       LogPrintf("** nCoinAge %d ajusted to 48 hours SUPMCoinMax =%d \n", nCoinAge, SUPMCoinWeightMax );
        }
     
     //Start nCoinAge Exploit Protection from 6th July 2018
