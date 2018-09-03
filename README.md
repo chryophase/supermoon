@@ -6,4 +6,4 @@ Astronomy Calendar of Celestial Events are tracked in full for Calendar Year 201
 
 If any of these events occur at the same time, then the APR% rewards for each event stacks.
 
-For full details see: http:\\www.supermooncoin.com
+For full details see: www.supermooncoin.com
