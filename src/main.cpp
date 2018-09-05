@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
-// Copyright (c) 2018 Supermoon Developers v0.7.5 Preod  1.1.0.0
+// Copyright (c) 2018 Supermoon Developers v0.7.51 Preod  1.1.0.0
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -1168,7 +1168,7 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
 	        {
 			nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 4;         //SEP 21 EQUINOX (24 Hours)
 	            	LogPrintf("--------------------------------------------------------------------------------------\n");
-			LogPrintf("23rd SEP EQUINOX  2018 01:54 UTC (24 HOURS) +Bonus STACK APR 200% -  nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime());
+			LogPrintf("23rd SEP EQUINOX  2018 01:54 UTC (24 HOURS) Bonus STACK APR +200 -  nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime());
 			LogPrintf("--------------------------------------------------------------------------------------\n");           
 		}
 		else if(pindexBest->GetBlockTime()  <= 1537843920)
@@ -1179,80 +1179,190 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
 	        else if(pindexBest->GetBlockTime()  <= 1538473500)
 	        {
 	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5;         //Sep 25 Full
-        	    LogPrintf("Week of Sep 25-Oct 2 Full nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+        	LogPrintf("Week of Sep 25-Oct 2 Full nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
 		}
-
-    ///////////////////// Checked OK - DC
-    /// Oct 2018
-	    else if(pindexBest->GetBlockTime()  <= 1539056820)
-		    {
-            nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;          //Oct 2 Last 1/2
-            LogPrintf("Week of Oct 2-9 1/2 nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+   ///////////////////// Prod
+   // Oct 2018
+      		else if(pindexBest->GetBlockTime()  <= 1538956800)			//Instead of 1539056820, Ajusted to start of DRACONIDS Bonus
+		{
+            	nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;          //Oct 2 Last 1/2
+            	LogPrintf("Week of Oct 2-9 1/2 nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
 		}
+	//DRACONIDS
+		else if(pindexBest->GetBlockTime()  <= 1539129540)
+	         {
+			nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 4;         //Oct 8-9 (48 Hours)
+	            	LogPrintf("--------------------------------------------------------------------------------------\n");
+			LogPrintf("8-9th OCT-2018 DRACONIDS  00:01 UTC (48 HOURS) Bonus STACK APR +200 -  nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime());
+			LogPrintf("--------------------------------------------------------------------------------------\n");           
+		 }
 		else if(pindexBest->GetBlockTime()  <= 1539712920)
 	        {
 	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 1;     //Oct 9 New
-            LogPrintf("Week of Oct 9-16 New nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+            	LogPrintf("Week of Oct 9-16 New nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
 		}
-		else if(pindexBest->GetBlockTime()  <= 1540399500)
+	//ORIONIDS
+		else if(pindexBest->GetBlockTime()  <= 1540080000)				// Oct 16 First 1/2 until ORIONIDS  Starts 21st OCT (48 Hours)
 	        {
-	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     //Oct 16 First 1/2
-            LogPrintf("Week of Oct 16-24 1/2 nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;      // Oct 16 until 21st First 1/2  (ORIONIDS)
+            	LogPrintf("Week of Oct 16-21 1/2 nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
 		}
-        else if(pindexBest->GetBlockTime()  <= 1541004000)
+        	else if(pindexBest->GetBlockTime()  <= 1540252740)
+	         {
+			nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 4;       //Oct 21-22 (48 Hours)
+	            	LogPrintf("--------------------------------------------------------------------------------------\n");
+			LogPrintf("21-22 OCT-2018 ORIONIDS 00:01 UTC (48 HOURS) Bonus STACK APR +200 -  nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime());
+			LogPrintf("--------------------------------------------------------------------------------------\n");           
+		 }
+        	else if(pindexBest->GetBlockTime()  <= 1540399500)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     //Oct 16-24 First 1/2  (Remaining Half Moon
+            	LogPrintf("Week of Oct 22-24 1/2 nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}        	
+        	else if(pindexBest->GetBlockTime()  <= 1541004000)
 	        {
 	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5;     //Oct 24 Full
-            LogPrintf("Week of Oct 24-31 Full nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+            	LogPrintf("Week of Oct 24-31 Full nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
 		}
-		else if(pindexBest->GetBlockTime()  <= 1541728380)
+	//TAURIDS
+		else if(pindexBest->GetBlockTime()  <= 1541376000)
 	        {
 	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     //Oct 31 Last 1/2
-            LogPrintf("Week of Oct 31-Nov 9 1/2 nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+            	LogPrintf("Week of Oct 31-Nov 5 1/2 nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
 		}
-    /////////////
+          	else if(pindexBest->GetBlockTime()  <= 1541505540)
+	         {
+			nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 4;       //NOV 5-6 (48 Hours)
+	            	LogPrintf("--------------------------------------------------------------------------------------\n");
+			LogPrintf("5-6 NOV-2018 TAURIDS 00:01 UTC (48 HOURS) Bonus STACK APR +200 -  nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime());
+			LogPrintf("--------------------------------------------------------------------------------------\n");           
+		 }
+    		else if(pindexBest->GetBlockTime()  <= 1541728380)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     //Nov 6-9 Last 1/2 of Moon before New Moon
+            	LogPrintf("Week of Nov6- 9 1/2 nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+    /////////////  PROD
     //Nov 2018
-        else if(pindexBest->GetBlockTime()  <= 1542387780)
-		    {
+        	else if(pindexBest->GetBlockTime()  <= 1542387780)
+		{
 	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 1;     //Nov 9 New
-            LogPrintf("Week of Nov 9-16 New nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+	        LogPrintf("Week of Nov 9-16 New nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
 		}
+	//LEONIDS
+		else if(pindexBest->GetBlockTime()  <= 1542412800)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     //Nov 16-17 First 1/2 (Start of LEONIDS)
+            	LogPrintf("Week of Nov 16-17 1/2 nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+		else if(pindexBest->GetBlockTime()  <= 1542585540)
+	         {
+			nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 4;   //NOV 17-18 (48 Hours)
+	            	LogPrintf("--------------------------------------------------------------------------------------\n");
+			LogPrintf("17-18 NOV-2018 LEONIDS 00:01 UTC (48 HOURS) Bonus STACK APR +200 -  nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime());
+			LogPrintf("--------------------------------------------------------------------------------------\n");           
+		 }
 		else if(pindexBest->GetBlockTime()  <= 1542974700)
 	        {
-	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     //Nov 16 First 1/2
-            LogPrintf("Week of Nov 16-23 1/2 nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     //Nov 19-23 First 1/2 MOON
+            	LogPrintf("Week of Nov 19-23 1/2 nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
 		}
 		else if(pindexBest->GetBlockTime()  <= 1543677420)
 	        {
 	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5;     //Nov 23 Full
-            LogPrintf("Week of Nov 23-Dec 1 Full nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+            	LogPrintf("Week of Nov 23-Dec 1 Full nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
 		}
-        else if(pindexBest->GetBlockTime()  <= 1544167200)
+        	else if(pindexBest->GetBlockTime()  <= 1544167200)
 	        {
 	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     //Nov 31  Last 1/2
-            LogPrintf("Week of Dec 1-7 1/2 nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+            	LogPrintf("Week of Dec 1-7 1/2 nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
 		}
-    //////////////
+    //////////////////
     //Dec 2018
-        else if(pindexBest->GetBlockTime()  <= 1544874540)
-            {
+        	else if(pindexBest->GetBlockTime()  <= 1544659200)
+            	{
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 1;     //Dec 7-13  New (Geminids Start
+            	LogPrintf("Week of Dec 7-13 New nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+	//GEMINIDS
+		else if(pindexBest->GetBlockTime()  <= 1544831940)
+	         {
+			nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 4;   //DEC 13-14 (48 Hours)
+	            	LogPrintf("--------------------------------------------------------------------------------------\n");
+			LogPrintf("13-14 Dec-2018 GEMINIDS 00:01 UTC (48 HOURS) +Bonus STACK APR +200 -  nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime());
+			LogPrintf("--------------------------------------------------------------------------------------\n");           
+		 }
+		else if(pindexBest->GetBlockTime()  <= 1544874540)
+            	{
 	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 1;     //Dec 7 New
-            LogPrintf("Week of Dec 7-15 New nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+            	LogPrintf("Week of Dec 14-15 New Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
 		}
-		else if(pindexBest->GetBlockTime()  <= 1545500880)
+
+		else if(pindexBest->GetBlockTime()  <= 1545350400)
 	        {
-	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     //Dec 15 First 1/2
-            LogPrintf("Week of Dec 15-22 1/2 nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     //Dec 15-21 First 1/2
+            	LogPrintf("Week of Dec 15-21 1/2 Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
 		}
+         //URSIDS 
+		else if(pindexBest->GetBlockTime()  <= 1545430920 )
+	         {
+			nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 4;         //Dec 21  URSIDS (24 Hours Period)
+	            	LogPrintf("--------------------------------------------------------------------------------------\n");
+			LogPrintf("21 Dec-2018 URSIDS 00:01 UTC (24 HOURS) +Bonus STACK APR +200 -  nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime());
+			LogPrintf("--------------------------------------------------------------------------------------\n");           
+		 }	
+	//URSIDS & SOLSTICE (2x Stack Bonus) still 1/2 Moon!
+		else if(pindexBest->GetBlockTime()  <= 545500880 )
+	         {
+			nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 7;         //Dec 22  URSIDS & SOLSTICE start  (18 Hours Period)
+	            	LogPrintf("--------------------------------------------------------------------------------------\n");
+			LogPrintf("SOLSTICE 21-DEC 22:22 (24 HOURS) & URSIDS with 1/2 Moon +Bonus STACK APR +400 + DOUBLE +100-  nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime());
+			LogPrintf("--------------------------------------------------------------------------------------\n");           
+		 }	
+         //SOLSTICE (2x Stack Bonus !) base change to Full Moon
+		else if(pindexBest->GetBlockTime()  <= 1545517320 )
+	         {
+			nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 10;         //DEC 22 SOLSTICE 22:22 (6 Hours to the second)
+	            	LogPrintf("--------------------------------------------------------------------------------------\n");
+			LogPrintf("22 Dec 2018 URSIDS & SOLSTICE ends 22:22 UTC (24 HOURS) & FUll Moon +Bonus STACK APR +400 + DOUBLE +100 -  nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime());
+			LogPrintf("--------------------------------------------------------------------------------------\n");           
+		 }
+
+	//URSIDS & Full Moon 	
+		else if(pindexBest->GetBlockTime()  <= 1545523140 )
+	         {
+			nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 7;         //Dec 22  URSIDS (6 Hours Period)
+	            	LogPrintf("--------------------------------------------------------------------------------------\n");
+			LogPrintf("22 Dec-2018 URSIDS (24 HOURS) with FULL MOON +Bonus STACK APR +200 -  nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime());
+			LogPrintf("--------------------------------------------------------------------------------------\n");           
+		 }	
 		else if(pindexBest->GetBlockTime()  <= 1546076040)
 	        {
 	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5;     //Dec 22 Full
-            LogPrintf("Week of Dec 22-29 Full nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+            	LogPrintf("Week of Dec 22-29 Full Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
 		}
-        else if(pindexBest->GetBlockTime()  <= 1546737960)
+        	else if(pindexBest->GetBlockTime()  <= 1546473600)
 	        {
-	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     //Dec 29  Last 1/2
-            LogPrintf("Week of Dec 29-Jan 6 1/2 Full nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     //Dec 29 2018 to 3rd Jan 2019  Last 1/2 Moon
+            	LogPrintf("Week of Dec 29-Jan 3 1/2 Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
 		}
+	//Quadrantids
+		else if(pindexBest->GetBlockTime()  <= 1546646340 )
+	         {
+			nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 4;         //Jan 3-4  Quad (48 Hours Period)
+	            	LogPrintf("--------------------------------------------------------------------------------------\n");
+			LogPrintf("3-4 Jan-2019 Quadrantids 00:01 UTC (24 HOURS) +Bonus STACK APR +200 -  nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime());
+			LogPrintf("--------------------------------------------------------------------------------------\n");           
+		 }
+		else if(pindexBest->GetBlockTime()  <= 1546737960)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     //Jan 4-6 2019  Last 1/2 Moon
+            	LogPrintf("Week of 4-6 Jan 1/2 Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}	
+    //////////////////////////////
+		
+		
+		
     //////////////////////////////
     //Jan 2019
         else if(pindexBest->GetBlockTime()  <= 1547448300)
@@ -1300,10 +1410,10 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
     ////////////////////////
     /////   End of SUPERMOON Phases Check - Effort reward set to 1% as standard - to change later -  3/9/2018
     ////////////////////////
-	   else if(pindexBest->GetBlockTime()  >= 1551888241    )
+	   	else if(pindexBest->GetBlockTime()  >= 1551888241    )
 	        {
 	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 1; //Mar 6 New Moon
-            LogPrintf("Week of Mar 6  2019 New Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+           	 LogPrintf("Week of Mar 6  2019 New Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
 		}
     ////////////////////////
     /////   End of SUPERMOON EPOCH Nest
