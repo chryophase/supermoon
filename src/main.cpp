@@ -1063,8 +1063,8 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
        LogPrintf("** nCoinAge %d ajusted to 48 hours SUPMCoinMax =%d \n", nCoinAge, SUPMCoinWeightMax );
        }
     
-    //Start nCoinAge Exploit Protection from 6th July 2018
-    if(pindexBest->GetBlockTime()  <= 1530863460)                                // 1530863460 - Friday, July 6, 2018 7:51:00 AM
+    	//Start nCoinAge Exploit Protection from 6th July 2018
+    		if(pindexBest->GetBlockTime()  <= 1530863460)                                // 1530863460 - Friday, July 6, 2018 7:51:00 AM
 	        {
 	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 1;    //July 6 Last 1/2
                 LogPrintf("Week of Jul-6-13 nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
@@ -1146,9 +1146,18 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
 	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5;         //Aug 26 Full
             	LogPrintf("Week of Aug 26-Sep 3 Full nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime());
 		}
+  	    else     // Report if no expressions matched up to Aug 2018
+	        {
+		LogPrintf("*****\n");
+	        LogPrintf("** End SUPM Aug-2018 Nest Reached \n");
+	        LogPrintf("** No Expressions Matched  \n");
+		LogPrintf("*****\n");
+		}
+        /////// Report if no expressions matched up to Aug 2018
+
 	///////////
 	// Sep 2018
-        	else if(pindexBest->GetBlockTime()  <= 1536516060)
+        if(pindexBest->GetBlockTime()  <= 1536516060)
             	{
 	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;         //Sep 3 Last 1/2
             	LogPrintf("Week of Sep 3-9 1/2 nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
