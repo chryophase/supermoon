@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
-// Copyright (c) 2018 Supermoon Developers v0.7.51 Preod  1.1.0.0
+// Copyright (c) 2018 Supermoon Developers v1.0753 Prod  1.1.0.0
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -1012,7 +1012,7 @@ int64_t GetProofOfWorkReward(int64_t nFees)
         nSubsidy = 46500000 * COIN;			//Instamine 
 	}
 	else if(pindexBest->nHeight <= 3500) {		//PoWstops at 3500 Block height (Total DevStake 50,000,000
-        nSubsidy = 1000 * COIN;				//Standard PoW reward 1000 / to start PoS staking engine
+        nSubsidy = 1000 * COIN;				//Standard PoW reward 1000 for PoS staking engine start
         } else
         {
         nSubsidy = 0 * COIN;		
@@ -1370,13 +1370,13 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
 		}
 	    else     	// Report if no expressions matched
 	        {
-	        LogPrintf("** End SUPM 2018 Nest Reached \n");
+	        LogPrintf("** End SUPM Dec 2018 Nest - No expressions Matc \n");
 		}
     ////// End of 2018
     LogPrintf("** End SUPM 2018 Nest \n");
 
    //////////////////////////////
-   //Jan 2019  Nest 
+   //Jan 2019  Nest Start
    //////////////////////////////
     if(pindexBest->GetBlockTime()  <= 1547448300)
             	{
@@ -1420,13 +1420,249 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
 	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     //Feb 26 Last 1/2
             	LogPrintf("Week of Feb 26-Mar 6  2019 Last 1/2 nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
 		}
+        //////////////////////////////
+	//Mar 2019
+        	else if(pindexBest->GetBlockTime()  <= 1552562760)
+            	{
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 1;     //06/03/19 16:04	NEW Moon
+            	LogPrintf("Week of 06/03/19 16:04 New nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+		else if(pindexBest->GetBlockTime()  <= 1552559160)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     //14/03/19 10:26	1/2 Moon
+            	LogPrintf("Week of 14/03/19 10:26 1/2 Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+		else if(pindexBest->GetBlockTime()  <= 1553132520)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5;     //21/3/19 1:42	Full
+            	LogPrintf("Week of 21/3/19 1:42	Full nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+        	else if(pindexBest->GetBlockTime()  <= 1553746200)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     //28/03/19 04:10	1/2 Moon
+            	LogPrintf("Week of 28/03/19 04:10 1/2 Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+
+	//////////////////////////////
+	//April 2019
+        	else if(pindexBest->GetBlockTime()  <= 1554454200)
+            	{
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 1;     //05/04/19 08:50	NEW Moon
+            	LogPrintf("Week of 05/04/19 08:50 NEW Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+		else if(pindexBest->GetBlockTime()  <= 1555095900)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     //12/04/19 19:05	1/2 Moon
+            	LogPrintf("Week of 12/04/19 19:05 1/2 Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+		else if(pindexBest->GetBlockTime()  <= 1555672320)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5;     // 19/04/19 11:12 Full
+            	LogPrintf("Week of 19/04/19 11:12 Full nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+        	else if(pindexBest->GetBlockTime()  <= 1556317080)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     // 26/04/19 22:18 1/2 Moon
+            	LogPrintf("Week of 26/04/19 22:18  1/2 Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+
+	//////////////////////////////
+	//May 2019
+        	else if(pindexBest->GetBlockTime()  <= 1557009900)
+            	{
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 1;     // 04/05/19 22:45	NEW Moon
+            	LogPrintf("Week of 04/05/19 22:45 NEW Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+		else if(pindexBest->GetBlockTime()  <= 1557623520)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     // 12/05/19 01:12	1/2 Moon
+            	LogPrintf("Week of 12/05/19 01:12 1/2 Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+		else if(pindexBest->GetBlockTime()  <= 1558213860)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5;     // 18/05/19 21:11	Full
+            	LogPrintf("Week of 18/05/19 21:11 Full nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+        	else if(pindexBest->GetBlockTime()  <= 1558888380)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     // 26/05/19 16:33	1/2 Moon
+            	LogPrintf("Week of 26/05/19 16:33 1/2 Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+	/////////////////////////////
+	//Jun 2019
+        	else if(pindexBest->GetBlockTime()  <= 1559556060)
+            	{
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 1;     // 03/06/19 10:01	NEW Moon
+            	LogPrintf("Week of 03/06/19 10:01 NEW Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+		else if(pindexBest->GetBlockTime()  <= 1560146340)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     // 10/06/19 05:59	1/2 Moon
+            	LogPrintf("Week of 10/06/19 05:59 1/2 Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+		else if(pindexBest->GetBlockTime()  <= 1560760200)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5;     // 17/06/19 08:30	Full
+            	LogPrintf("Week of 17/06/19 08:30  Full nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+        	else if(pindexBest->GetBlockTime()  <= 1561455960)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     // 25/06/19 09:46	1/2 Moon
+            	LogPrintf("Week of 25/06/19 09:46 1/2 Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+ 	 else     	// Report if no expressions matched in the Nest.
+	        {
+	        LogPrintf("** End SUPM Jun 2019 Nest - No expressions Match \n");
+		}
+
+	/////////////////////////////
+	//Jul 2019 Nest Start
+	/////////////////////////////
+        if(pindexBest->GetBlockTime()  <= 1562094960)
+            	{
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 1;     // 02/07/19 19:16	NEW Moon
+            	LogPrintf("Week of 02/07/19 19:16 NEW Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+		else if(pindexBest->GetBlockTime()  <= 1562669700)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     // 09/07/19 10:55	1/2 Moon
+            	LogPrintf("Week of 09/07/19 10:55 1/2 Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+		else if(pindexBest->GetBlockTime()  <= 1563313080)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5;     // 16/07/19 21:38	Full
+            	LogPrintf("Week of 16/07/19 21:38 Full nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+        	else if(pindexBest->GetBlockTime()  <= 1564017480)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     // 25/07/19 01:18	1/2 Moon
+            	LogPrintf("Week of 25/07/19 01:18 1/2 Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+
+	/////////////////////////////
+	//Aug 2019
+        	else if(pindexBest->GetBlockTime()  <= 1564629120)
+            	{
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 1;     // 01/08/19 03:12	NEW Moon
+            	LogPrintf("Week of 01/08/19 03:12 NEW Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+		else if(pindexBest->GetBlockTime()  <= 1565199060)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     // 07/08/19 17:31	1/2 Moon
+            	LogPrintf("Week of 07/08/19 17:31 1/2 Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+		else if(pindexBest->GetBlockTime()  <= 1565872140)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5;     // 15/08/19 12:29	    Full
+            	LogPrintf("Week of 15/08/19 12:29 Full nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+        	else if(pindexBest->GetBlockTime()  <= 1566572160)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     // 23/08/19 14:56	1/2 Moon
+            	LogPrintf("Week of 23/08/19 14:56 1/2 Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+		else if(pindexBest->GetBlockTime()  <= 1567161420)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 1;     // 30/08/19 10:37	NEW Moon
+            	LogPrintf("Week of 30/08/19 10:37 NEW Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+	/////////////////////////////
+	//Sep 2019
+        	else if(pindexBest->GetBlockTime()  <= 1567739400)
+            	{
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     // 06/09/19 03:10	1/2 Moon
+            	LogPrintf("Week of 06/09/19 03:10 1/2 Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+		else if(pindexBest->GetBlockTime()  <= 1568435580)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5;     // 14/09/19 04:33	Full
+            	LogPrintf("Week of 14/09/19 04:33 Full nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+		else if(pindexBest->GetBlockTime()  <= 1569120060)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     // 22/09/19 02:41	1/2 Moon
+            	LogPrintf("Week of 22/09/19 02:41 1/2 Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+        	else if(pindexBest->GetBlockTime()  <= 1569728280)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 1;     // 28/09/19 18:26	NEW Moon
+            	LogPrintf("Week of 28/09/19 18:26 NEW Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+
+	/////////////////////////////
+	//Oct 2019
+        	else if(pindexBest->GetBlockTime()  <= 1570294020)
+            	{
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     // 05/10/19 16:47	1/2 Moon
+            	LogPrintf("Week of 05/10/19 16:47 1/2 Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+		else if(pindexBest->GetBlockTime()  <= 1571000880)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5;     // 13/10/19 21:08	Full
+            	LogPrintf("Week of 13/10/19 21:08 Full nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+		else if(pindexBest->GetBlockTime()  <= 1571661540)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     // 21/10/19 12:39	1/2 Moon
+            	LogPrintf("Week of 21/10/19 12:39 1/2 Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+        	else if(pindexBest->GetBlockTime()  <= 1572233880)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 1;     // 28/10/19 03:38	NEW Moon
+            	LogPrintf("Week of 28/10/19 03:38 NEW Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+	/////////////////////////////
+	//Nov 2019
+        	else if(pindexBest->GetBlockTime()  <= 1572862980)
+            	{
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     // 04/11/19 10:23	1/2 Moon
+            	LogPrintf("Week of 04/11/19 10:23 1/2 Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+		else if(pindexBest->GetBlockTime()  <= 1573565640)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5;     // 12/11/19 13:34	Full
+            	LogPrintf("Week of 12/11/19 13:34 Full nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+		else if(pindexBest->GetBlockTime()  <= 1574197800)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     // 19/11/19 21:10	1/2 Moon
+            	LogPrintf("Week of 19/11/19 21:10 1/2 Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+        	else if(pindexBest->GetBlockTime()  <= 1574780700)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 1;     // 26/11/19 15:05	NEW Moon
+            	LogPrintf("Week of 26/11/19 15:05 NEW Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+	/////////////////////////////
+	//Dec 2019
+        	else if(pindexBest->GetBlockTime()  <= 1575442680)
+            	{
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     // 04/12/19 06:58	1/2 Moon
+            	LogPrintf("Week of 04/12/19 06:58 1/2 Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+		else if(pindexBest->GetBlockTime()  <= 1576128060)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5;     // 12/12/19 05:12	Full
+            	LogPrintf("Week of 12/12/19 05:12 Full nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+		else if(pindexBest->GetBlockTime()  <= 1576731420)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;     // 19/12/19 04:57	1/2 Moon
+            	LogPrintf("Week of 19/12/19 04:57 1/2 Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
+        	else if(pindexBest->GetBlockTime()  <= 1577337180)
+	        {
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 1;     // 26/12/19 05:13	NEW Moon
+            	LogPrintf("Week of 26/12/19 05:13 NEW Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
+		}
         else     	// Report if no expressions matched in the Nest.
 	        {
-	        LogPrintf("** End SUPM 2019 Nest Reached \n");
+	        LogPrintf("** End SUPM Dec 2019 Nest - No expressions Match \n");
 		}
     	////// End of 2019
-   	LogPrintf("*** End SUPM 2019 Nest \n");
-	LogPrintf("*******\n");	
+	LogPrintf("*******************************\n");	
+   	LogPrintf("*** End SUPM 2019 Nest Reached \n");
+	LogPrintf("*******************************\n\n");	
           
           
        ////////////////////////
