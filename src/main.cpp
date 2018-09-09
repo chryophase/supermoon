@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
-// Copyright (c) 2018 Supermoon Developers v1.0753 Prod  1.1.0.0
+// Copyright (c) 2018 Supermoon Developers v1.08  Prod  1.1.0.1
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -1035,36 +1035,33 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
 {
     int64_t SUPMCoinWeightMax = nCoinAge;								// Set SUPMCoinWeightMax = nCoinAge
     int64_t nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8)*1 ;				// Default subsidy CoinYearReward is (100% APR)
-
-    LogPrintf("****** Proof Of Stake Engine *******  \n");
+    LogPrintf("**********************************************************  \n");
+    LogPrintf("****** Proof Of Stake Engine Start   *******  \n");
     LogPrintf("** nHeight=%d Supermoon Time=%d \n", pindexBest->nHeight, pindexBest->GetBlockTime()); 
-    LogPrintf("**** \n");
     LogPrintf("**   \n");
 
     if (pindexBest->nHeight <= 3500) 
     	{									
         nSubsidy = nCoinAge * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 1;				// Default subsidy (100% APR) * 1
     	LogPrintf("**** \n");
-	LogPrintf("* Less then 3500 - nSubsidy=%d nHeight=%d \n", nSubsidy, pindexBest->nHeight );
+	LogPrintf("** Less then 3500 - nSubsidy=%d \n", nSubsidy );
     	LogPrintf("**   \n");
        	}
     
-    if(pindexBest->nHeight >= 3500 )
+    if(pindexBest->nHeight >= 3500 )      // Testing if PoS Start by Blockheight value
     {
-    LogPrintf("**** \n");
-    LogPrintf("** Block Height >= 3501 PASSED     ----\n");
-    LogPrintf("** Supermoon! PoW Active - nCoinAge=%d nHeight=%d  \n", nCoinAge, pindexBest->nHeight );
-    LogPrintf("**** \n");
+    LogPrintf("** Block Height >= 3501 PASSED  \n");
+    LogPrintf("** Supermoon! PoW Active - nCoinAge=%d  \n", nCoinAge );
+        
+    	// PoS 3.1 - Limit CoinAge Weight to no more than 48 Hours
+    	if(SUPMCoinWeightMax >= 3628800) 										
+       	{
+       	SUPMCoinWeightMax = 3628800;   		//Set SUPMCoinWeightMax to 48 hours Max stops Wallet-Lock-Exploit for CoinReward but does not ajust PoS right to stake weight elevation
+       	LogPrintf("** nCoinAge %d ajusted to 48 hours SUPMCoinMax =%d \n", nCoinAge, SUPMCoinWeightMax );
+       	}
     
-    // PoS 3.1 - Limit CoinAge Weight to no more than 48 Hours
-    if(SUPMCoinWeightMax >= 3628800) 										
-       {
-       SUPMCoinWeightMax = 3628800;   		//Set SUPMCoinWeightMax to 48 hours Max stops Wallet-Lock-Exploit CoinReward, but does not ajust PoS right to stake weight elevation
-       LogPrintf("** nCoinAge %d ajusted to 48 hours SUPMCoinMax =%d \n", nCoinAge, SUPMCoinWeightMax );
-       }
-    
-    	//Start nCoinAge Exploit Protection from 6th July 2018
-    		if(pindexBest->GetBlockTime()  <= 1530863460)                                // 1530863460 - Friday, July 6, 2018 7:51:00 AM
+    	//Start SUPERMOON Epoch Testing 6th July 2018
+    	if(pindexBest->GetBlockTime()  <= 1530863460)                                // 1530863460 - Friday, July 6, 2018 7:51:00 AM
 	        {
 	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 1;    //July 6 Last 1/2
                 LogPrintf("Week of Jul-6-13 nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
@@ -1159,7 +1156,7 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
 	// Sep 2018
         if(pindexBest->GetBlockTime()  <= 1536516060)
             	{
-	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 2;         //Sep 3 Last 1/2
+	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 1;         //Sep 3 Last 1/2   (False Stake FIX set to NEW Moon (one off)
             	LogPrintf("Week of Sep 3-9 1/2 nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
 		}
 		else if(pindexBest->GetBlockTime()  <= 1537139700)
@@ -1370,15 +1367,21 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
 		}
 	    else     	// Report if no expressions matched
 	        {
-	        LogPrintf("** End SUPM Dec 2018 Nest - No expressions Matc \n");
+	        LogPrintf("** End SUPM Dec 2018 Nest - No expressions Matched \n");
+		LogPrintf("***************************************************\n");	
 		}
-    ////// End of 2018
-    LogPrintf("** End SUPM 2018 Nest \n");
-
-   //////////////////////////////
-   //Jan 2019  Nest Start
-   //////////////////////////////
-    if(pindexBest->GetBlockTime()  <= 1547448300)
+    	////// End of 2018
+    	LogPrintf("**** End SUPM to 2018 Nest \n");
+    
+    	if(pindexBest->GetBlockTime()  >= 1546737961)
+    	{
+    	LogPrintf("***************************************\n");
+    	LogPrintf("** SUPERMOON EPOCH Jan-Jun 2019     ***\n");
+    	LogPrintf("***************************************\n");
+    	//////////////////////////////
+    	//Jan 2019  Nest Start
+    	//////////////////////////////
+    		if(pindexBest->GetBlockTime()  <= 1547448300)
             	{
 	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 1;     //Jan 6 New
            	LogPrintf("Week of Jan 6-14 2019 New nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
@@ -1514,11 +1517,20 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
 	        {
 	        LogPrintf("** End SUPM Jun 2019 Nest - No expressions Match \n");
 		}
+	LogPrintf("***************************************\n");	
+   	LogPrintf("*** End SUPM Jan-Jun 2019 Nest Reached \n");
+	LogPrintf("****************************************\n\n");	
+	}     // End of Jan-Jul 2018 Nest
 
+	if(pindexBest->GetBlockTime()  >= 1561455960)
+    	{
+    	LogPrintf("********************************************\n");
+    	LogPrintf("** SUPERMOON EPOCH Jul-Dec 2019 Nest    ****\n");
+    	LogPrintf("********************************************\n");
 	/////////////////////////////
 	//Jul 2019 Nest Start
 	/////////////////////////////
-        if(pindexBest->GetBlockTime()  <= 1562094960)
+            if(pindexBest->GetBlockTime()  <= 1562094960)
             	{
 	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 1;     // 02/07/19 19:16	NEW Moon
             	LogPrintf("Week of 02/07/19 19:16 NEW Moon nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
@@ -1660,36 +1672,39 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
 	        LogPrintf("** End SUPM Dec 2019 Nest - No expressions Match \n");
 		}
     	////// End of 2019
-	LogPrintf("*******************************\n");	
-   	LogPrintf("*** End SUPM 2019 Nest Reached \n");
-	LogPrintf("*******************************\n\n");	
+	LogPrintf("****************************************\n");	
+   	LogPrintf("*** End SUPM JUL-DEC 2019 Nest Reached *\n");
+	LogPrintf("****************************************\n\n");	
+        }    // End of JUL-DEC 2019 Nest
           
-          
-       ////////////////////////
-       // SUPERMOON 2020 Phase Check 1st Jan 2020 11:11:11AM ------> Effort reward set to 100% as standard onwards... (SUPM Devs) 
-       ////////////////////////
-       if(pindexBest->GetBlockTime()  >= 1577877071    )
+       	////////////////////////
+       	// SUPERMOON 2020 Phase Check 1st Jan 2020 11:11:11AM onwards Effort reward set to 100% APR as standard... Will ajust add Moon Phases and Stellar events later - SUPM Devs Sep 2018
+       	////////////////////////
+       	if(pindexBest->GetBlockTime()  >= 1577877071    )
 	        {
+           	 LogPrintf("********************\n");
+           	 LogPrintf("*** 2020 Reached   *\n");
+           	 LogPrintf("********************\n");
 	         nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 1; //Mar 6 New Moon
            	 LogPrintf("2020 Base nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime() );
            	 LogPrintf("********************\n");
-           	 LogPrintf("*** 2020 Reached \n");
-           	 LogPrintf("********************\n");
 		}
+        
         //////////////////////////////////////////////////////////
-        /////   End of SUPERMOON EPOCH Nest 2018 to March 2019  //
+        /////   End of SUPERMOON EPOCH Nesting 2018 to JAN 2020 //
         //////////////////////////////////////////////////////////
 
-
-	LogPrintf("** End Supermoon EPOCH Validation Cycle - nSubsidy=%d nHeight =%d nCoinAge=%d SUPMCoinWeightMax=%d ------\n", nSubsidy, pindexBest->nHeight, nCoinAge, SUPMCoinWeightMax );
+	LogPrintf("** End Supermoon EPOCH Validation Cycle - nSubsidy=%d nHeight =%d nCoinAge=%d SUPMCoinWeightMax=%d \n", nSubsidy, pindexBest->nHeight, nCoinAge, SUPMCoinWeightMax );
         // LogPrintf("nMoneySupply=%d \n",  pindexBest->nMoneySupply);
 	LogPrintf("** End Calcs - Final result nSubsidy=%d nHeight=%d \n", nSubsidy, pindexBest->nHeight );
         LogPrintf("** \n");
-	}
 
- 	if(pindexBest->nMoneySupply >= 49999999000000000)         // Teest for > 499.999 Million MAX Supply Target (approx 500,000,000 SUPM - Last 8 '0's are Decimal places)
+	}    //END of Testing Blockheight over 3500 for PoS Starting
+
+ 	if(pindexBest->nMoneySupply >= 49999999000000000)         // Test for >= 499,999,990 Million MAX Supply Target (approx 500,000,000 SUPM - Last 8 '0's are Decimal places)
  		{
-         		nSubsidy = 1; 	//Once last base 10 SUPM coins passeed, PoS reward is flat (1 SAT - Fee) Coin mechanic still allows PoS engines to stake, just no APR calc.
+         		nSubsidy = 1; 	//Once near the base last 10 SUPM coins, 1 last stake get a PoS reward, then reward is reduced to flat 1 SAT onwards - Engine will take approx 150+ Years to create 1 SUPM
+         				//Fee Coin mechanic still allows PoS engines to stake but no APR% reward.  
        		  	LogPrintf("*****************************************************************\n");
        		  	LogPrintf("*****************     Max Moneysupply Control        ************\n");
        		  	LogPrintf("*****************************************************************\n");
@@ -1697,12 +1712,13 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
        		  	LogPrintf("*****************************************************************\n");
 		}
 
-    	LogPrintf("** Creation of GetProofOfStakeReward() is nSubsidy=%s Supermoontime=%d nFees=%d \n", FormatMoney(nSubsidy), pindexBest->GetBlockTime(), nFees);
-    	LogPrintf("*******  Proof of Stake End ************* \n\n");
-    	LogPrint("creation", "GetProofOfStakeReward(): create=%s nCoinAge=%d\n", FormatMoney(nSubsidy), nCoinAge);
+	LogPrintf("** Creation of GetProofOfStakeReward() is nSubsidy=%s Supermoontime=%d nFees=%d \n", FormatMoney(nSubsidy), pindexBest->GetBlockTime(), nFees);
+	LogPrintf("*******  Proof of Stake End ************* \n\n");
+	LogPrint("creation", "GetProofOfStakeReward(): create=%s nCoinAge=%d\n", FormatMoney(nSubsidy), nCoinAge);
 
 	return nSubsidy + nFees;
-}
+
+}     // END of Proof Of Stake
 
 
 int64_t nTargetTimespan(int nHeight)
