@@ -5,14 +5,15 @@ New Moon stake each reward 100% APR
 Half Moon stake each reward 200% APR 
 Full Moon stake each reward 500% APR
 
-SUPERMOON reacts with bonus APR% for various Stellar events such as: Asteroid shower peaks and Planetary events, annual periodic events such the Equinox and Solstices. The highest rewards are gained via Solar & Lunar Eclipses, Blue Moons and of course, the rare Supermoon & New Supermoon
+SUPERMOON reacts with bonus APR% for various Stellar events such as: Asteroid shower peaks and Planetary events, annual periodic events such the Equinox and Solstices. The highest rewards are gained via Solar & Lunar Eclipses, Blue Moons and of course, the rare Supermoon & New Supermoon.
+
 Bonus reward Stellar Events for shown periods:
 * Meteor Showers : +200% APR (Peak 24-48 Hours of Event)
 * Equinox or Solstice : +200% APR (24 Hours of Event)
 * Planet 'Transits' the sun : +200% APR (timed per second of event)
 * Monthly (or Seasonal) Blue Moon : +300% APR (24 Hours of Event)
-* Solar or Lunar Eclipse : +300% APR (timed per second of event)
-* SUPERMOON (or New Supermoon) : +400% APR (24 Hours of occurrence)
+* Solar or Lunar Eclipse : +300% APR (timed per second of Event)
+* SUPERMOON (or New Supermoon) : +400% APR (24 Hours of Event)
 
 For dual or triple stellar bonus events occurring simultaneously , SUPERMOON will stack the rewards from each and also give a bonus +100% APR for Dual or +200% APR for Triple, all timed to the second of the overlap
 
