@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
-// Copyright (c) 2018 Supermoon Developers v1.1  PRODUCTION RELEASE  1.1.0.2 	(Sep 25/9/2018)
+// Copyright (c) 2018 Supermoon Developers v1.1  PRODUCTION RELEASE  1.1.0.2 	(Sep 26/9/2018)
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -1155,12 +1155,12 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
 		}
   	    else     // Report if no expressions matched up to 3-Sep-2018
 	        {
-	        LogPrintf("** End SUPM Aug18 to Sep18-No Expressions Matched \n");
+	        LogPrintf("** End SUPM 6-Jul18 - 3-Sep18 - No Expressions Matched \n");
 		}
-	}     	// End 6-Jul to 3-Sep 2018 Nest
+	}     	// End 6-Jul18 - 3-Sep18 Nest
 
 	LogPrintf("*****\n");
-	LogPrintf("**  Test 3-Sep18 to 4-Jan19 Nest ***\n");
+	LogPrintf("**  Test 3-Sep18 to 6-Jan19 Nest ***\n");
 	if(pindexBest->GetBlockTime()  >= 1535942221)
     	{
 //    	LogPrintf("***************************************\n");
@@ -1397,11 +1397,11 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
 
 
 	LogPrintf("*****\n");
-	LogPrintf("** Test if 6-Jan19 - 26Jun-19 Nest \n");    //Validation remove
+	LogPrintf("** Test if 6-Jan19 - 26-Jun-19 Nest \n");    //Validation remove
     	if(pindexBest->GetBlockTime()  >= 1546746527)
     	{
 //	LogPrintf("***************************************\n");
-	LogPrintf("** SUPERMOON EPOCH Nest 6Jan-19 to 26Jun-19 *\n");
+	LogPrintf("** SUPERMOON EPOCH Nest 6-Jan19 - 26-Jun-19 *\n");
 //   	LogPrintf("***************************************\n");
     	//////////////////////////////
     	//Jan 2019  Nest Start  
@@ -1654,13 +1654,13 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
 		}
  	 else // Report if no expressions matched in the Nest.
 	        {
-   		LogPrintf("** End SUPM EPOCH Nest Jan6-19 to Jul2-19 Nest - No expressions Match \n");
+   		LogPrintf("** End SUPM EPOCH Nest 6-Jan19 - 26-Jun-19 Nest - No expressions Match \n");
 		}
 	}     // End of Jan-Jul 2019 Nest
 
 
 	LogPrintf("*****\n");
-	LogPrintf("** Test if Jul-Dec 2019 Nest \n");    	//Validation remove
+	LogPrintf("** Test if Jul2-19 to Dec26-19 Nest \n");    	//Validation remove
 
 	if(pindexBest->GetBlockTime()  >= 1562086513)
     	{
@@ -2027,11 +2027,11 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
 		}
         else  // Report if no expressions matched in the Nest.
 	        {
-	        LogPrintf("** End SUPM JUL2-19 to Jan-2020 - No expressions Match \n");
+	        LogPrintf("** End SUPM Jul2-19 to Dec26-19 - No expressions Match \n");
 		}
         }   
         // End of JUL-DEC 2019 Nest	
-	// LogPrintf("** Jul-Dec 2019 Nest Passed \n");
+	// LogPrintf("** Jul2-19 to Dec26-19 Nest Passed \n");
    	LogPrintf("*****\n");  
 
   	    
