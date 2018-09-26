@@ -3,7 +3,7 @@
 // Copyright (c) 2018 Supermoon developers 
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-// Build PROD v0.751 Wallet 1.1.0.0   
+// Build PROD v1.1 Wallet 1.1.0.2 (Sep29-18)  
 #include "assert.h"
 
 #include "chainparams.h"
