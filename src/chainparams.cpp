@@ -113,7 +113,7 @@ public:
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
         nLastPOWBlock = 3500;		//validation point for last possible Mining
-        nPOSStartBlock = 3501;		//validation point for staking to start
+        nPOSStartBlock = 1001;		//validation point for Proof of Stake 
     }
 
     virtual const CBlock& GenesisBlock() const { return genesis; }
