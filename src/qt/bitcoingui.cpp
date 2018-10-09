@@ -4,7 +4,7 @@
  * W.J. van der Laan 2011-2012
  * The Bitcoin Developers 2011-2012
  */
- //Copyright The Supermoon Developers 2018    v0.66
+ //Copyright The Supermoon Developers 2018 - v1.3  Animated Status Icon SUPM Dev
 
 #include <QApplication>
 

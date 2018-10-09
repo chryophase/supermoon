@@ -1,5 +1,5 @@
 #include <QApplication>
-
+//SUPERMOON Prod 1.2 - v1.2.0.0  (Oct 10 2018)
 #include "guiutil.h"
 
 #include "bitcoinaddressvalidator.h"
@@ -468,26 +468,26 @@ void SetBlackThemeQSS(QApplication& app)
                       "QComboBox QAbstractItemView::item { color: rgb(255,255,255); }"
                       "QPushButton    { background: rgb(68,81,98); color: rgb(222,222,222); }"
                       "QDoubleSpinBox { background: rgb(63,67,72); color: rgb(255,255,255); border-color: rgb(194,194,194); }"
-                      "QLineEdit      { background: rgb(63,67,72); color: rgb(255,255,255); border-color: rgb(194,194,194); }"
-                      "QTextEdit      { background: rgb(63,67,72); color: rgb(255,255,255); }"
+                      "QLineEdit      { background: rgb(40,40,40); color: rgb(255,255,255); border-color: rgb(194,194,194); }"  
+                      "QTextEdit      { background: rgb(40,40,40); color: rgb(255,255,255); }"   				
                       "QPlainTextEdit { background: rgb(63,67,72); color: rgb(255,255,255); }"
-                      "QMenuBar       { background: rgb(41,44,48); color: rgb(110,116,126); }"
+                      "QMenuBar       { background: rgb(40,40,40); color: rgb(255,255,255); }"    
                       "QMenu          { background: rgb(30,32,36); color: rgb(222,222,222); }"
                       "QMenuBar::item { background-color: rgb(68,81,98); color: rgb(222,222,222);}"
 					  "QMenu::item:selected { background-color: rgb(135,146,160); }"
 					  "QMenuBar::item:selected { background-color: rgb(41,44,48); }"
-                      "QLabel         { color: rgb(120,127,139); }"
-                      "QScrollBar     { color: rgb(255,255,255); }"
+                      "QLabel         { color: rgb(255,255,255); }"  
+                      "QScrollBar     { color: rgb(255,255,255); }"	
                       "QCheckBox      { color: rgb(120,127,139); }"
                       "QRadioButton   { color: rgb(120,127,139); }"
                       "QTabBar::tab   { color: rgb(120,127,139); border: 1px solid rgb(78,79,83); border-bottom: none; padding: 5px; }"
-                      "QTabBar::tab:selected  { background: rgb(41,44,48); }"
-                      "QTabBar::tab:!selected { background: rgb(24,26,30); margin-top: 2px; }"
+                      "QTabBar::tab:selected  { background: rgb(41,44,48); }"	
+                      "QTabBar::tab:!selected { background: rgb(24,26,30); margin-top: 2px; }"	//background: rgb(24,26,30)
                       "QTabWidget::pane { border: 1px solid rgb(78,79,83); }"
                       "QToolButton    { background: rgb(30,32,36); color: rgb(116,122,134); border: none; border-left-color: rgb(30,32,36); border-left-style: solid; border-left-width: 6px; margin-top: 8px; margin-bottom: 8px; }"
                       "QToolButton:checked { color: rgb(255,255,255); border: none; border-left-color: rgb(28,135,200); border-left-style: solid; border-left-width: 6px; }"
-                      "QProgressBar   { color: rgb(149,148,148); border-color: rgb(255,255,255); border-width: 1px; border-style: solid; }"
-                      "QProgressBar::chunk { background: rgb(255,255,255); }"
+                      "QProgressBar   { color: rgb(255,255,255); border-color: rgb(255,255,255); border-width: 1px; border-style: solid; }"   //{ color: rgb(149,148,148)
+                      "QProgressBar::chunk { background: rgb(51,102,204); }"    //  Progress Bar Color: rgb(255,255,255); changed to Blue
                       "QTreeView::item { background: rgb(41,44,48); color: rgb(212,213,213); }"
                       "QTreeView::item:selected { background-color: rgb(59,124,220); }"
                       "QTableView     { background: rgb(66,71,78); color: rgb(212,213,213); gridline-color: rgb(157,160,165); }"
