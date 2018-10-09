@@ -3,7 +3,7 @@
 // Copyright (c) 2018 Supermoon developers 
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-// Build PROD v1.1 Wallet 1.1.0.2 (Sep29-18)  
+// Supermoon version v1.2  PRODUCTION RELEASE  1.2.0.0 	(Oct 9 2018) - POS 3.5
 #include "assert.h"
 
 #include "chainparams.h"
@@ -76,27 +76,27 @@ public:
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 20);
 
         // Build the genesis. 
-        const char* pszTimestamp = "Supermoon-V1-1-Production1Sep2018";
+        const char* pszTimestamp = "Supermoon-V1-2-Production9thOct2018";
         std::vector<CTxIn> vin;
         vin.resize(1);
         vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         std::vector<CTxOut> vout;
         vout.resize(1);
         vout[0].SetEmpty();
-        CTransaction txNew(1, 1535953653, vin, vout, 0);
+        CTransaction txNew(1, 1539067911, vin, vout, 0);
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime    = 1535953653;
+        genesis.nTime    = 1539067911;
         genesis.nBits    = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce   = 1925456;
+        genesis.nNonce   = 0;
 
-	//MineGenesis(genesis);    ////Mine merkleroot + Genesis block hash+nonce
+	MineGenesis(genesis);    ////Mine merkleroot + Genesis block hash+nonce
         
 	hashGenesisBlock = genesis.GetHash();
-          assert(hashGenesisBlock == uint256("0x0000057c2413b80a910c03e9f7e40339ba6577fbbf46e1ac4e90766d147aa0cf"));
-          assert(genesis.hashMerkleRoot == uint256("0x030c5a65bdea9543b5d28cd49af8392d44aca44a2e8a5797ee61c235d5cb0cd8"));
+          assert(hashGenesisBlock == uint256("0x"));
+          assert(genesis.hashMerkleRoot == uint256("0x"));
       
 	
        	vSeeds.push_back(CDNSSeedData("45.76.124.145", "45.76.124.145")); 	// SUPM-Node1   (PROD)
@@ -151,10 +151,10 @@ public:
         genesis.nNonce = 4119810;
         genesis.nTime    = 1535953950;
   	//Mine test + Genesis block hash+nonce (merkle done already above)         
-	//MineGenesis(genesis);   
+	MineGenesis(genesis);   
 	
 	hashGenesisBlock = genesis.GetHash();
-                assert(hashGenesisBlock == uint256("0x000009606fc76f13afb43a7ae23f778825f94aa3a410e1b2cd7b948ea5a8d718"));
+                assert(hashGenesisBlock == uint256("0x"));
 
         vFixedSeeds.clear(); 
         vSeeds.clear();
@@ -197,8 +197,8 @@ public:
         nDefaultPort = 21999;
         strDataDir = "regtest";
 
-        //MineGenesis(genesis);  //mine last nTime setting Genesis block
-        assert(hashGenesisBlock == uint256("0x00000590367dfecb2a34242b4173e91bb07e8c012f83ac1e2bb1fd3f0196ead4"));
+        MineGenesis(genesis);  //mine last nTime setting Genesis block
+        assert(hashGenesisBlock == uint256("0x"));
 
         vSeeds.clear();  // Regtest mode doesn't have any DNS seeds.
     }
