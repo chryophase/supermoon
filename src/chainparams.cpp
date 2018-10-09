@@ -90,13 +90,13 @@ public:
         genesis.nVersion = 1;
         genesis.nTime    = 1539067911;
         genesis.nBits    = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce   = 0;
+        genesis.nNonce   = 1496525;
 
-	MineGenesis(genesis);    ////Mine merkleroot + Genesis block hash+nonce
+	//MineGenesis(genesis);    ////Mine merkleroot + Genesis block hash+nonce
         
 	hashGenesisBlock = genesis.GetHash();
-          assert(hashGenesisBlock == uint256("0x"));
-          assert(genesis.hashMerkleRoot == uint256("0x"));
+          assert(hashGenesisBlock == uint256("0x00000370a125304fe9ee469e9f0b3197dbff231296a1be06f7c6f3104e3b6ad8"));
+          assert(genesis.hashMerkleRoot == uint256("0x5968b873ef6cd341ea65a761234f2dbf169131a5efe227d12926d6943b807105"));
       
 	
        	vSeeds.push_back(CDNSSeedData("45.76.124.145", "45.76.124.145")); 	// SUPM-Node1   (PROD)
@@ -148,13 +148,13 @@ public:
         nRPCPort = 19999;
         strDataDir = "testnet";
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce = 4119810;
-        genesis.nTime    = 1535953950;
+        genesis.nNonce = 460631;
+        genesis.nTime    = 1539075511;
   	//Mine test + Genesis block hash+nonce (merkle done already above)         
-	MineGenesis(genesis);   
+	//MineGenesis(genesis);   
 	
 	hashGenesisBlock = genesis.GetHash();
-                assert(hashGenesisBlock == uint256("0x"));
+                assert(hashGenesisBlock == uint256("0000053e085f841e76557cf9b381ed5b78028d296dbad85045727157a962cf1c"));
 
         vFixedSeeds.clear(); 
         vSeeds.clear();
@@ -190,15 +190,16 @@ public:
         pchMessageStart[2] = 0xb7;
         pchMessageStart[3] = 0x7d;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 1);
-        genesis.nTime = 1535987985;
+        genesis.nTime = 1539075670;
         genesis.nBits  = bnProofOfWorkLimit.GetCompact();
-        genesis.nNonce = 23552;
+        genesis.nNonce = 2969294;
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 21999;
         strDataDir = "regtest";
 
-        MineGenesis(genesis);  //mine last nTime setting Genesis block
-        assert(hashGenesisBlock == uint256("0x"));
+        //MineGenesis(genesis);  //mine last nTime setting Genesis block
+        
+	assert(hashGenesisBlock == uint256("0x000006b111345bdccfe7418fb0a0663f20c720144c9866244cba2ed485c59cb1"));
 
         vSeeds.clear();  // Regtest mode doesn't have any DNS seeds.
     }
