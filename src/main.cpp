@@ -3,7 +3,7 @@
 // Copyright (c) 2018 Supermoon Developers 
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-// Supermoon version v1.2  PRODUCTION RELEASE  1.2.0.0 	(Oct 9 2018) - POS 3.5
+// Supermoon version v1.21  PRODUCTION RELEASE  1.2.0.0 	(Oct 12 2018) - POS 3.5
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/filesystem.hpp>
 #include <boost/filesystem/fstream.hpp>
@@ -1057,7 +1057,7 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
     if(pindexBest->nHeight >= 3500 )      // Testing if PoS Start by Blockheight value
     {
     LogPrintf("** Block Height >= 3501 PASSED  \n");
-    LogPrintf("** Supermoon! PoW Active -  SupermoonCoinStake=%d \n", nCoinAge, SupermoonCoinStake );
+    LogPrintf("** Supermoon! PoW Active - nCoinAge=%d SupermoonCoinStake=%d \n", nCoinAge, SupermoonCoinStake );
     
     LogPrintf("\n\n *** POS Engine Start   \n");
     LogPrintf("nHeight=%d Supermoon Time=%d nCoinAge=%d nFees=%d SupermoonCoinStake=%d \n", pindexBest->nHeight, pindexBest->GetBlockTime(), nCoinAge, nFees, SupermoonCoinStake); 
