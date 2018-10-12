@@ -112,7 +112,7 @@ public:
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
-        nLastPOWBlock = 3500;		//validation point for last possible Mining
+        nLastPOWBlock = 5000;		//validation point for last possible Mining
         nPOSStartBlock = 1001;		//validation point for Proof of Stake 
     }
 
