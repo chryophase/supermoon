@@ -1012,8 +1012,11 @@ int64_t GetProofOfWorkReward(int64_t nFees)
         nSubsidy = 1000000 * COIN;			//Supermoon Team Stake
     	}
 	else if(pindexBest->nHeight <= 3500) {		//PoWstops at 3500 Block height
-        nSubsidy = 1000 * COIN;				//PoS staking engine start once PoW End
-        } else
+        nSubsidy = 1000 * COIN;				
+        } 
+        else if(pindexBest->nHeight <= 5000) {		//PoW Backup from stall 
+        nSubsidy = 50 * COIN;				//PoS staking engine start once PoW End
+        else
         {
         nSubsidy = 0 * COIN;		
         }
