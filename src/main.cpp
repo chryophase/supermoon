@@ -48,7 +48,7 @@ CBigNum bnProofOfStakeLimitV2(~uint256(0) >> 48);
 CBigNum bnProofOfStakeLimitFixed(~uint256(0) >> 40);
 CBigNum bnProofOfStakeLimitFixed2(~uint256(0) >> 49);
 
-int nStakeMinConfirmations = 1400;              // 1400 Confirmations before mature
+int nStakeMinConfirmations = 1400;              // 800 Confirmations before mature
 unsigned int nTargetSpacing = 90 ;  		// 90 Seconds
 unsigned int nStakeMinAge = 6 * 60 * 30 ;  	// 10800 Seconds (3 hours)
 unsigned int nModifierInterval = 10 * 60;       // Time to elapse before new modifier is computed

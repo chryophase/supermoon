@@ -3,7 +3,7 @@
 // Copyright (c) 2018 The Supermoon Developers 2018
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-// Supermoon version v1.2  PRODUCTION RELEASE  1.2.0.0 	(Oct 9 2018) - POS 3.5
+// Supermoon version v1.2  PRODUCTION RELEASE  1.2.0.0 	(Oct 13 2018) - POS 3.5 (DEV - DL)
 #include "wallet.h"
 
 #include "base58.h"
@@ -1627,10 +1627,6 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
     if (!SelectCoinsForStaking(nBalance - nReserveBalance, txNew.nTime, setCoins, nValueIn))
         return false;
     
-    LogPrintf("====> WALLET.CPP line 1626 1.nReserveBalance=%d \n", nReserveBalance);   ///  MEEEE
-    LogPrintf("====> WALLET.CPP line 1626 2.nValueIn=%d \n", nValueIn);   ///  MEEEE
-
-
     if (setCoins.empty())
         return false;
 
@@ -1702,12 +1698,7 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
                 vwtxPrev.push_back(pcoin.first);
                 txNew.vout.push_back(CTxOut(0, scriptPubKeyOut));
 
-		//int64_t SUPM1=txNew.vout.(CTxOut(0, scriptPubKeyOut));
-
-                LogPrint("coinstake", "CreateCoinStake : added kernel type=%d\n", whichType);
-                //LogPrintf("====> WALLET.CPP line 1705 3.whichType=%d \n", whichType);   ///  MEEEE
-                
-                LogPrintf("====> WALLET.CPP line 1705 4.nCredit=%d \n", nCredit);   ///  DC This has correct value.
+		LogPrint("coinstake", "CreateCoinStake : added kernel type=%d\n", whichType);
                 
                 fKernelFound = true;
                 break;
@@ -1754,7 +1745,7 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
             nCredit += pcoin.first->vout[pcoin.second].nValue;
 
             vwtxPrev.push_back(pcoin.first);
-	    LogPrintf("====>  WALLET.CPP line 1757 5.nCredit=%d \n", nCredit);   ///  MEEEE            
+	                
         }
     }
 
@@ -1763,15 +1754,13 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
         
         uint64_t nCoinAge;
         
-        LogPrintf("1768 ====>SupermoonCoinStake=nCredit \n");  
+        
         CTxDB txdb("r");
         if (!txNew.GetCoinAge(txdb, pindexPrev, nCoinAge))
             return error("CreateCoinStake : failed to calculate coin age");
 
 	uint64_t SupermoonCoinStake=nCredit;
-        
-	LogPrintf("====> WALLET.CPP line 1775 nHeight=%d Supermoon Time=%d nCoinAge=%d nFees=%d SupermoonCoinStake=%d \n", pindexBest->nHeight, pindexBest->GetBlockTime(), nCoinAge, nFees, SupermoonCoinStake);
-		 
+        			 
 	int64_t nReward = GetProofOfStakeReward(pindexPrev, nCoinAge, nFees, SupermoonCoinStake);
         if (nReward <= 0)
             return false;
