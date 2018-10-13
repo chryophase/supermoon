@@ -48,7 +48,7 @@ CBigNum bnProofOfStakeLimitV2(~uint256(0) >> 48);
 CBigNum bnProofOfStakeLimitFixed(~uint256(0) >> 40);
 CBigNum bnProofOfStakeLimitFixed2(~uint256(0) >> 49);
 
-int nStakeMinConfirmations = 800;              // 800 Confirmations before mature
+int nStakeMinConfirmations =2200;               // 2200 Confirmations before mature  (about 20+ Hours)
 unsigned int nTargetSpacing = 90 ;  		// 90 Seconds
 unsigned int nStakeMinAge = 6 * 60 * 30 ;  	// 10800 Seconds (3 hours)
 unsigned int nModifierInterval = 10 * 60;       // Time to elapse before new modifier is computed
@@ -1007,16 +1007,14 @@ int64_t GetProofOfWorkReward(int64_t nFees)
 {
     int64_t nSubsidy = 1 * COIN;
 
-    if(pindexBest->nHeight <= 47) 
+    if(pindexBest->nHeight <= 46) 
     	{
         nSubsidy = 1000000 * COIN;			//Supermoon Team Stake & Giveaways
     	}
-	else if(pindexBest->nHeight <= 3500) {		//PoWstops at 3500 Block height
-        nSubsidy = 1000 * COIN;				
+	else if(pindexBest->nHeight <= 6500) {		//PoWstops at 6500 Block height to ensure PoS engine does not stall
+        nSubsidy = 150 * COIN;				
         } 
-        else if(pindexBest->nHeight <= 5000) {		//PoS Backup
-        nSubsidy = 50 * COIN;
-	} 						//PoS staking engine start once PoW End
+        //PoS staking engine start once PoW End
         else
         {
         nSubsidy = 0 * COIN;		
