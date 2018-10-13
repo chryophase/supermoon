@@ -4,7 +4,7 @@
  * W.J. van der Laan 2011-2012
  * The Bitcoin Developers 2011-2012
  */
- //Copyright The Supermoon Developers 2018 - v1.3  Animated Status Icon SUPM Dev
+ //Copyright The Supermoon Developers 2018 - v1.3  (Future Animated Status Icon SUPM Dev)
 
 #include <QApplication>
 
@@ -1040,9 +1040,9 @@ void BitcoinGUI::updateStakingIcon()
         else if (vNodes.empty())
             labelStakingIcon->setToolTip(tr("Not staking because wallet is offline"));
         else if (IsInitialBlockDownload())
-            labelStakingIcon->setToolTip(tr("Not staking because wallet is syncing"));
+            labelStakingIcon->setToolTip(tr("Not staking because SUPM wallet is syncing"));
         else if (!nWeight)
-            labelStakingIcon->setToolTip(tr("Not staking because you don't have mature coins"));
+            labelStakingIcon->setToolTip(tr("Not staking - coins mature after 1200 confirmations"));  //SUPM DEV 1.2.0.1
         else
             labelStakingIcon->setToolTip(tr("Not staking"));
     }
