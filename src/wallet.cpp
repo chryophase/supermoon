@@ -3,7 +3,7 @@
 // Copyright (c) 2018 The Supermoon Developers 2018
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-// Supermoon version v1.2  PRODUCTION RELEASE  1.2.0.0 	(Oct 13 2018) - POS 3.5 (DEV - DL)
+// Supermoon version v1.2  PRODUCTION RELEASE  1.2.0.1 	(Oct 13 2018) - POS 3.5 (DEV - DL)
 #include "wallet.h"
 
 #include "base58.h"
@@ -1753,8 +1753,7 @@ bool CWallet::CreateCoinStake(const CKeyStore& keystore, unsigned int nBits, int
     {
         
         uint64_t nCoinAge;
-        
-        
+                
         CTxDB txdb("r");
         if (!txNew.GetCoinAge(txdb, pindexPrev, nCoinAge))
             return error("CreateCoinStake : failed to calculate coin age");
