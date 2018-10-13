@@ -3,7 +3,7 @@
 // Copyright (c) 2018 Supermoon Developers Prod Checkpoint 1.0753
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-// Supermoon version v1.2  PRODUCTION RELEASE  1.2.0.0 	(Oct 9 2018) - POS 3.5
+// Supermoon version v1.21  PRODUCTION RELEASE  1.2.0.1 	(Oct 13 2018) - POS 3.5
 
 #include <boost/assign/list_of.hpp> // for 'map_list_of()'
 #include <boost/foreach.hpp>
@@ -23,9 +23,9 @@ namespace Checkpoints
 
     static MapCheckpoints mapCheckpoints =
         boost::assign::map_list_of
-        (      0,    	uint256("0x00000370a125304fe9ee469e9f0b3197dbff231296a1be06f7c6f3104e3b6ad8") )
+        (      0,    	uint256("0x") )
         ;
-//      (   4000,    uint256("0x") )
+//      (   0,    uint256("0x00000370a125304fe9ee469e9f0b3197dbff231296a1be06f7c6f3104e3b6ad8") )
 //	(   6000,    uint256("0x") )
 //	(   11000,   uint256("0x") )
 //      ;
