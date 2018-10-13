@@ -3,7 +3,7 @@
 // Copyright (c) 2018 Supermoon developers 
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-// Supermoon version v1.2  PRODUCTION RELEASE  1.2.0.0 	(Oct 9 2018) - POS 3.5
+// Supermoon version v1.21  PRODUCTION RELEASE  1.2.0.1 	(Oct 13 2018) - POS 3.5
 #include "assert.h"
 
 #include "chainparams.h"
@@ -112,8 +112,8 @@ public:
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
-        nLastPOWBlock = 5000;		//validation point for last possible Mining
-        nPOSStartBlock = 1001;		//validation point for Proof of Stake 
+        nLastPOWBlock = 6500;		//Mining PoW Disabled
+        nPOSStartBlock = 3000;		//Proof of Stake enabled
     }
 
     virtual const CBlock& GenesisBlock() const { return genesis; }
