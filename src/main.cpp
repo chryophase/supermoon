@@ -1007,7 +1007,7 @@ int64_t GetProofOfWorkReward(int64_t nFees)
 {
     int64_t nSubsidy = 1 * COIN;
 
-    if(pindexBest->nHeight <= 46) 
+    if(pindexBest->nHeight <= 49) 
     	{
         nSubsidy = 1000000 * COIN;			//Supermoon Team Stake & Giveaways
     	}
@@ -1023,26 +1023,16 @@ int64_t GetProofOfWorkReward(int64_t nFees)
  	return nSubsidy + nFees;
 }
 
-
-
-
-
 ////////////////////////////////
 // Supermoon Proof of Stake   //
 ////////////////////////////////
 int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, int64_t nFees, int64_t SupermoonCoinStake )
 {
     
-    int64_t nSubsidy = 1;					// Default subsidy CoinYearReward is 1 SUPM
+    int64_t nSubsidy = 150;					// Default subsidy CoinYearReward is 1 SUPM
     int64_t SUPMCoinWeightMax = SupermoonCoinStake * 0.00000001;   
         
-    if (pindexBest->nHeight <= 3500) 
-    	{									
-        nSubsidy = SUPMCoinWeightMax  * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 1;				// Default subsidy (100% APR)
-	}
-
-    
-    if(pindexBest->nHeight >= 3500 )      
+    if(pindexBest->nHeight >= 6500 )      
     {
     LogPrintf("\n\n****************************\n");
     LogPrintf("** POS Engine Start   \n");
