@@ -19,8 +19,8 @@ For dual or triple stellar bonus events occurring simultaneously , SUPERMOON wil
 
 See the Calendar page for key Astronomy Calendars Stellar / Celestial events for the 2018 year onward 
 
-SUPERMOON reacts to the published calculated events by the second for the start of any event and the 24-hour Universal Standard Time (UTC) published time is measured via precise atomic clocks
+SUPERMOON reacts to the published calculated events by the second for the start of any event and the 24-hour Universal Standard Time (UTC) published time is measured against Moon Phases and Stellar Events source: NASA.gov  ( https://eclipse.gsfc.nasa.gov/SKYCAL/SKYCAL.html )
 
 For full details see: www.supermooncoin.com
 
-Moon Phases and Stellar Events source: NASA.gov  ( https://eclipse.gsfc.nasa.gov/SKYCAL/SKYCAL.html )
+
