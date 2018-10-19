@@ -1,6 +1,7 @@
 // Copyright (c) 2012 The Bitcoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
+// Copyright (c) 2018 The Supermoon Devs
 #include <string>
 
 #include "version.h"
@@ -36,10 +37,8 @@ const std::string CLIENT_NAME("supermoon");
 // git will put "#define GIT_ARCHIVE 1" on the next line inside archives. 
 #define GIT_ARCHIVE 1
 #ifdef GIT_ARCHIVE
-#    define GIT_COMMIT_ID "432276f"		
-#    define GIT_COMMIT_DATE "1537911424"   	
-//#    define GIT_COMMIT_ID "32a928e"
-//#    define GIT_COMMIT_DATE "$Format:%cD"
+#    define GIT_COMMIT_ID "6ca14fc"		
+#    define GIT_COMMIT_DATE "1539976418"   	
 #endif
 
 #define BUILD_DESC_FROM_COMMIT(maj,min,rev,build,commit) \
