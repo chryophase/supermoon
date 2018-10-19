@@ -3,7 +3,7 @@
 // Copyright (c) 2018 Supermoon Developers 
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-// Supermoon version v1.21  PRODUCTION RELEASE  1.2.0.1 	(Oct 13 2018) - POS 3.5    (SUPM - DL)
+// Supermoon version v1.21  PRODUCTION RELEASE  1.2.0.1 	(Oct 20 2018) - POS 3.5    (SUPM DEV)
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/filesystem.hpp>
 #include <boost/filesystem/fstream.hpp>
@@ -62,8 +62,8 @@ uint256 nBestInvalidTrust = 0;
 uint256 hashBestChain = 0;
 CBlockIndex* pindexBest = NULL;
 int64_t nTimeBestReceived = 0;
-int nStakeMinConfirmationsFix = 1400;             
-int nStakeMinConfirmationsFix2 = 1400;            
+int nStakeMinConfirmationsFix = 1200;             
+int nStakeMinConfirmationsFix2 = 1200;            
 bool fImporting = false;
 bool fReindex = false;
 bool fHaveGUI = false;
@@ -1946,15 +1946,15 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
 
  	if(pindexBest->nMoneySupply >= 49999999000000000)         // Test for >= 499,999,990 Million MAX Supply = Target 500,000,000 SUPM
  		{
-         		nSubsidy = 1; 	//Once near the base last 10 SUPM coins, 1 last stake get a PoS reward, then reward is reduced to flat 1 SAT onwards - Engine will take approx 150+ Years to create 1 SUPM
-         				//Fee Coin mechanic still allows PoS engines to stake but no APR% reward.  
+         		nSubsidy = 1000; 	//Once near the base last 10 SUPM coins, 1 last stake get a PoS reward, then reward is reduced to flat 1000 SATs onwards - Engine will take approx 11.4+ Years to create 1 SUPM
+         					//Fee Coin mechanic still allows PoS engines to stake but gain no valuable APR% rewards return.  
        		  	LogPrintf("** Max Moneysupply Control \n");
          		LogPrintf("**  Max=nMoneySupply=%d nSubsidy=%d nHeight=%d \n", pindexBest->nMoneySupply, nSubsidy, pindexBest->nHeight );
        		  	LogPrintf("*****\n");
 		}
 	
 	LogPrintf("** Creation of GetProofOfStakeReward() is nSubsidy=%s Supermoontime=%d nFees=%d \n", FormatMoney(nSubsidy), pindexBest->GetBlockTime(), nFees);
-	LogPrintf("**** PoS End *** \n");
+	LogPrintf("**** PoS End **** \n\n");
 
     	
 	LogPrint("creation", "GetProofOfStakeReward(): create=%s nCoinAge=%d, SupermoonCoinStake=%d\n", FormatMoney(nSubsidy), nCoinAge, SupermoonCoinStake);
