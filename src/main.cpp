@@ -3,7 +3,7 @@
 // Copyright (c) 2018 Supermoon Developers 
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-// Supermoon version v1.21  PRODUCTION RELEASE  1.2.0.1 	(Oct 20 2018) - POS 3.5    (SUPM DEV)
+// Supermoon version v1.21  PRODUCTION RELEASE  1.2.0.1 	(Oct 26 2018) - POS 3.5    (SUPM DEV)
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/filesystem.hpp>
 #include <boost/filesystem/fstream.hpp>
@@ -48,7 +48,7 @@ CBigNum bnProofOfStakeLimitV2(~uint256(0) >> 48);
 CBigNum bnProofOfStakeLimitFixed(~uint256(0) >> 40);
 CBigNum bnProofOfStakeLimitFixed2(~uint256(0) >> 49);
 
-int nStakeMinConfirmations =1190;               // 1200 Confirmations before mature  (about 20+ Hours)
+int nStakeMinConfirmations =1190;               // About 1200 Confirmations before mature (20+ Hours)
 unsigned int nTargetSpacing = 90 ;  		// 90 Seconds
 unsigned int nStakeMinAge = 6 * 60 * 30 ;  	// 10800 Seconds (3 hours)
 unsigned int nModifierInterval = 10 * 60;       // Time to elapse before new modifier is computed
@@ -62,8 +62,8 @@ uint256 nBestInvalidTrust = 0;
 uint256 hashBestChain = 0;
 CBlockIndex* pindexBest = NULL;
 int64_t nTimeBestReceived = 0;
-int nStakeMinConfirmationsFix = 1200;             
-int nStakeMinConfirmationsFix2 = 1200;            
+int nStakeMinConfirmationsFix = 1190;             
+int nStakeMinConfirmationsFix2 = 1190;            
 bool fImporting = false;
 bool fReindex = false;
 bool fHaveGUI = false;
