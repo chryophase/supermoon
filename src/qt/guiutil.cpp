@@ -1,5 +1,5 @@
 #include <QApplication>
-//SUPERMOON Prod 1.2 - v1.2.0.0  (Oct 10 2018)
+//SUPERMOON Prod 1.2 - v1.2.0.1  (3-Nov-2018)
 #include "guiutil.h"
 
 #include "bitcoinaddressvalidator.h"
@@ -465,17 +465,17 @@ void SetBlackThemeQSS(QApplication& app)
     app.setStyleSheet("QWidget        { background: rgb(41,44,48);  }"
                       "QFrame         { border: none; background-image: url(:/images/supermoonbak)  ; background-size:  cover ; background-repeat: no-repeat; }"
                       "QComboBox      { color: rgb(255,255,255);  }"
-                      "QComboBox QAbstractItemView::item { color: rgb(255,255,255); }"
+                      "QComboBox QAbstractItemView::item { color: rgb(225,225,255); }"  //Nov3
                       "QPushButton    { background: rgb(68,81,98); color: rgb(222,222,222); }"
                       "QDoubleSpinBox { background: rgb(63,67,72); color: rgb(255,255,255); border-color: rgb(194,194,194); }"
-                      "QLineEdit      { background: rgb(40,40,40); color: rgb(255,255,255); border-color: rgb(194,194,194); }"  
-                      "QTextEdit      { background: rgb(40,40,40); color: rgb(255,255,255); }"   				
-                      "QPlainTextEdit { background: rgb(63,67,72); color: rgb(255,255,255); }"
-                      "QMenuBar       { background: rgb(40,40,40); color: rgb(255,255,255); }"    
+                      "QLineEdit      { background: rgb(40,40,40); color: rgb(225,225,255); border-color: rgb(194,194,194); }"   //Nov3 
+                      "QTextEdit      { background: rgb(40,40,40); color: rgb(225,225,255); }"   				//Nov3
+                      "QPlainTextEdit { background: rgb(63,67,72); color: rgb(225,225,255); }"
+                      "QMenuBar       { background: rgb(40,40,40); color: rgb(225,225,255); }"    				//Nov3
                       "QMenu          { background: rgb(30,32,36); color: rgb(222,222,222); }"
                       "QMenuBar::item { background-color: rgb(68,81,98); color: rgb(222,222,222);}"
-					  "QMenu::item:selected { background-color: rgb(135,146,160); }"
-					  "QMenuBar::item:selected { background-color: rgb(41,44,48); }"
+		      "QMenu::item:selected { background-color: rgb(135,146,160); }"
+		      "QMenuBar::item:selected { background-color: rgb(41,44,48); }"
                       "QLabel         { color: rgb(255,255,255); }"  
                       "QScrollBar     { color: rgb(255,255,255); }"	
                       "QCheckBox      { color: rgb(120,127,139); }"
