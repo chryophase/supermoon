@@ -1,5 +1,5 @@
 #include <QApplication>
-//SUPERMOON Prod 1.2 - v1.2.0.1  (3-Nov-2018)
+//SUPERMOON Prod 1.2 - v1.2.0.1  (3-Nov-2018 Colour Fix)
 #include "guiutil.h"
 
 #include "bitcoinaddressvalidator.h"
@@ -468,10 +468,10 @@ void SetBlackThemeQSS(QApplication& app)
                       "QComboBox QAbstractItemView::item { color: rgb(225,225,255); }"  //Nov3
                       "QPushButton    { background: rgb(68,81,98); color: rgb(222,222,222); }"
                       "QDoubleSpinBox { background: rgb(63,67,72); color: rgb(255,255,255); border-color: rgb(194,194,194); }"
-                      "QLineEdit      { background: rgb(40,40,40); color: rgb(225,225,255); border-color: rgb(194,194,194); }"   //Nov3 
-                      "QTextEdit      { background: rgb(40,40,40); color: rgb(225,225,255); }"   				//Nov3
-                      "QPlainTextEdit { background: rgb(63,67,72); color: rgb(225,225,255); }"
-                      "QMenuBar       { background: rgb(40,40,40); color: rgb(225,225,255); }"    				//Nov3
+                      "QLineEdit      { background: rgb(10,10,10); color: rgb(123,157,239); border-color: rgb(194,194,194); }"   //Skyblue Edit 
+                      "QTextEdit      { background: rgb(10,10,10); color: rgb(149,161,186); }"   				 //Nov3
+                      "QPlainTextEdit { background: rgb(63,67,72); color: rgb(149,161,186); }"
+                      "QMenuBar       { background: rgb(40,40,40); color: rgb(225,225,255); }"    				
                       "QMenu          { background: rgb(30,32,36); color: rgb(222,222,222); }"
                       "QMenuBar::item { background-color: rgb(68,81,98); color: rgb(222,222,222);}"
 		      "QMenu::item:selected { background-color: rgb(135,146,160); }"
