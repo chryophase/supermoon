@@ -1,9 +1,9 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2012 The Bitcoin developers
-// Copyright (c) 2018 The Supermoon Developers
+// Copyright (c) 2018-2019 The Supermoon Developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-// Supermoon version v1.2  PRODUCTION RELEASE  1.2.0.0 	(Oct 9 2018) - POS 3.5
+// Supermoon version v1.22  PRODUCTION RELEASE  1.2.0.2 	(Mar 24- 2019) - POS 3.5
 #ifndef BITCOIN_MAIN_H
 #define BITCOIN_MAIN_H
 
