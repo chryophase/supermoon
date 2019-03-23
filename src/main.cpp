@@ -3,7 +3,7 @@
 // Copyright (c) 2018 Supermoon Developers 
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
-// Supermoon version v1.21  PRODUCTION RELEASE  1.2.0.1 	(Oct 26 2018) - POS 3.5    (SUPM DEV)
+// Supermoon version v1.22  PRODUCTION RELEASE  1.2.0.2 	(Mar 25 2018) - POS 3.5    (SUPM DEV)
 #include <boost/algorithm/string/replace.hpp>
 #include <boost/filesystem.hpp>
 #include <boost/filesystem/fstream.hpp>
@@ -1438,8 +1438,8 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
 		}
         
 		else if(pindexBest->GetBlockTime()  <= 1553132580 )
-	         {
-			nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5;         
+	        {
+		nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 5;         
 	            	LogPrintf("--------------------------------------------------------------------------------------\n");
 			LogPrintf("20 Mar 2019 21:58 EQUINOX UTC (24 HOURS) - nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime());
 			LogPrintf("--------------------------------------------------------------------------------------\n");           
@@ -1448,17 +1448,13 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
 		else if(pindexBest->GetBlockTime()  <= 1553205480)  
 	        {
 	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 12;         
-			LogPrintf("--------------------------------------------------------------------------------------\n");
-			LogPrintf("SUPERMOON!! & EQUINOX STack 20 hours 21/3/19 1:43 to 21/3 21:59 UTC + DUAL 100% BONUS - nSubsidy=%d, Supermoontime=%d  \n", nSubsidy, pindexBest->GetBlockTime());
-			LogPrintf("--------------------------------------------------------------------------------------\n");
+			LogPrintf("Bonus Stack 20 hours 21/3/19 1:43 to 21/3 21:59 UTC nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime());
 		}		
        	
 		else if(pindexBest->GetBlockTime()  <= 1553218980)  
 	        {
 	        nSubsidy = SUPMCoinWeightMax * COIN_YEAR_REWARD * 33 / (365 * 33 + 8) * 9;         
-			LogPrintf("--------------------------------------------------------------------------------------\n");
-			LogPrintf("SUPERMOON!! Remaining 4 hours 22/3/19 1:43 UTC nSubsidy=%d, Supermoontime=%d  \n", nSubsidy, pindexBest->GetBlockTime());
-			LogPrintf("--------------------------------------------------------------------------------------\n");
+			LogPrintf("BONUS Remaining 4 hours 22/3/19 1:43 UTC nSubsidy=%d, Supermoontime=%d \n\n", nSubsidy, pindexBest->GetBlockTime());
 		}		
           	else if(pindexBest->GetBlockTime()  <= 1553746200)
 	        {
