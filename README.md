@@ -23,4 +23,4 @@ SUPERMOON reacts to the published calculated events by the second for the start 
 
 For full details see: www.supermooncoin.com
 
-
+Wallet Version Release 1.2.0.2 (v1.22) -(Mar 24 - 2019)
